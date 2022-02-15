@@ -3,9 +3,9 @@ import React from 'react'
 
 const randomUserAPI = () => {
   return axios.get('https://randomuser.me/api')
-    .then(res => {
-        console.log(res)
-        return res
+    .then(({data}) => {
+        console.log(data)
+        return JSON.stringify(data)
     })
     .catch(err => {
         console.error(err)
