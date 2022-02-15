@@ -3,14 +3,25 @@ import './App.css';
 import axios from 'axios';
 import randomUserAPI from './api/randomUserAPI';
 
-const {useState} = React;
+const {useEffect, useState} = React;
 
 
 
 const App = () => {
   let [counter, setCounter] = useState(0);
-  const [randomUserDataJSON, setRandomUserDataJSON] = useState('');
-  // const [reset, setReset] = resetCounter(0);
+
+  let [randomUserJSON, setRandomUserJSON] = useState('');
+
+  // useEffect(() => {
+  //   randomUserAPI()
+  //     .then(() => {
+  //       setRandomUserJSON(randomUserJSON)
+  //     })
+  //     .catch(err => {
+  //     console.error(err)
+  //     })
+  // }, []);
+
   return (
     <div className="App">
         <h1>Fetch API Playground</h1>
@@ -51,8 +62,14 @@ const App = () => {
           {/* Fetch random user API */}
       <div>
           <button onClick={() => {
-            randomUserAPI()
+            randomUserAPI().then(() => {
+              setRandomUserJSON(randomUserJSON)
+              })
+            .catch(err => {
+              console.error(err)
+            })
           }}>Fetch Random User Data</button>
+          <p>{randomUserJSON}</p>
       </div> 
 
 
