@@ -1,25 +1,34 @@
 import React from 'react'
-import logo from './logo.svg';
 import './App.css';
 
+const {useState} = React;
+
+
+
 const App = () => {
+  const [counter, setCounter] = useState(0);
+  const [count, resetCounter] = useState(0);
+
   return (
     <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+        <h1>Fetch API Playground</h1>
+          <hr />
+        <div>
+          {/* Counter */}
+          <h3>Counter</h3>
+          <p>{counter}</p>
+          <button onClick={() => {
+            setCounter(counter + 1)
+          }}>Increase Counter</button>
+          <button onClick={() => {
+            setCounter(count - 0)
+          }}>Reset Counter</button>
+        </div>
+      <hr />
+      <div>
+          
+      </div> 
+    </div>
   )
 }
 
