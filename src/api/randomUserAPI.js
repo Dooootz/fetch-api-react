@@ -13,3 +13,9 @@ const randomUserAPI = () => {
 }
 
 export default randomUserAPI
+
+
+// Just spent the last 2 hours breaking stuff 
+// reverted back to yesterdays code 
+// HIGH PRIORITY get this data fetched & render to the PAGE 
+// map thru object & display specified code 
